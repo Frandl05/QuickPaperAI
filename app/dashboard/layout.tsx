@@ -11,13 +11,13 @@ async function getData({
   id,
   firstName,
   lastName,
-  profileImage,
+
 }: {
   email: string;
   id: string;
   firstName: string | undefined | null;
   lastName: string | undefined | null;
-  profileImage: string | undefined | null;
+
 }) {
   noStore();
   const user = await prisma.user.findUnique({
@@ -72,7 +72,7 @@ await getData({
     firstName: user.given_name as string,
     id: user.id as string,
     lastName: user.family_name as string,
-    profileImage: user.picture,
+   
   });
   
   return (
