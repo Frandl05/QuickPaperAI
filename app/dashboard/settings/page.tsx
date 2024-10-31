@@ -1,4 +1,3 @@
-
 import {
   Select,
   SelectContent,
@@ -12,13 +11,12 @@ import prisma from "@/app/lib/db";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SaveButton } from "@/app/components/Submitbuttons";
 import { revalidatePath, unstable_noStore as noStore } from "next/cache";
 
 async function getData(userId: string) {
-  noStore ();
+  noStore();
   const data = await prisma.user.findUnique({
     where: {
       id: userId,
@@ -71,7 +69,7 @@ export default async function SettingPage() {
           <CardHeader>
             <CardTitle>General Data</CardTitle>
             <CardDescription>
-              Please provide general information about yourself. Please don't
+              Please provide general information about yourself. Please don&apos;t
               forget to save
             </CardDescription>
           </CardHeader>
@@ -127,5 +125,4 @@ export default async function SettingPage() {
       </Card>
     </div>
   );
-  }
-  
+}
