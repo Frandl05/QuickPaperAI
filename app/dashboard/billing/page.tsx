@@ -59,7 +59,7 @@ async function getData(userId: string) {
       
         const subscriptionUrl = await getStripeSession ({
           customerId: dbUser.stripeCustomerId,
-          domainUrl: "http://localhost:3000",
+          domainUrl: "https://quickpaperai.com",
           priceId: process.env.STRIPE_PRICE_ID as string,
         }); 
         return redirect(subscriptionUrl);
@@ -69,7 +69,7 @@ async function getData(userId: string) {
         "use server";
         const session = await stripe.billingPortal.sessions.create({
           customer: data?.user.stripeCustomerId as string,
-          return_url: "http://localhost:3000/dashboard",
+          return_url: "https://quickpaperai.com/dashboard",
         });
       
         return redirect(session.url);
