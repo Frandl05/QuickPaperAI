@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react"; // Asegúrate de importar el ícono correctamente
+import { Button } from "@/components/ui/button"; // Asegúrate de importar el botón correctamente
 import prisma from "@/app/lib/db"
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { redirect } from "next/navigation";
