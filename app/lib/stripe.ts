@@ -24,8 +24,8 @@ export const getStripeSession = async ({
       address: "auto",
       name: "auto",
     },
-    success_url: `${domainUrl}/payment/success`,
-    cancel_url: `${domainUrl}/payment/cancelled`,
+    success_url: `https://quickpaperai.com/payment/success`,
+    cancel_url: `https://quickpaperai.com/payment/cancelled`,
   });
   return session.url as string;
 };
