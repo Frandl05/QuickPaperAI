@@ -11,9 +11,10 @@ export async function Navbar() {
   return (
     <nav className="border-b bg-background h-auto flex items-center py-4">
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-      <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
-  Quick<span className="text-primary">PaperAI</span>
-</h1>
+        <h1 className="font-bold custom-title">
+          Quick<span className="text-primary">PaperAI</span>
+        </h1>
+
 
         <div className="flex items-center gap-x-2 md:gap-x-4">
           <ThemeToggle />
