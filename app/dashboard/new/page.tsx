@@ -21,11 +21,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {unstable_noStore as noStore } from "next/cache";
 
 
 export default function NewWorkRoute() {
-  noStore();
   const [autores, setAutores] = useState<string[]>([""]);
   const [generatedText, setGeneratedText] = useState<string | null>(null); // Para almacenar el texto generado por OpenAI
   const [loading, setLoading] = useState(false); // Nuevo estado para manejar la carga

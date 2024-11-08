@@ -43,7 +43,6 @@ async function getData(userId: string) {
 
     async function createSubscription() {
         "use server";
-        noStore();
       
         const dbUser = await prisma.user.findUnique({
           where: {
@@ -68,7 +67,6 @@ async function getData(userId: string) {
 
       async function createCustomerPortal() {
         "use server";
-        noStore();
         const session = await stripe.billingPortal.sessions.create({
           customer: data?.user.stripeCustomerId as string,
           return_url: "https://quickpaperai.com/dashboard",

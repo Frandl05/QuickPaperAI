@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { redirect } from "next/navigation";
-import { unstable_noStore as noStore } from "next/cache";
 import { ShieldCheck, Download, FileText, Clock, Layers, PencilLine } from "lucide-react"; 
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { CookieProvider } from "@/app/cookies/cookiecontext";
@@ -17,7 +16,6 @@ export default async function Home() {
   const { isAuthenticated } = getKindeServerSession();
   
   if (await isAuthenticated()) {
-    noStore();
     return redirect('/dashboard');
   }
 

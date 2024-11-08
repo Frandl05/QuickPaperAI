@@ -39,7 +39,6 @@ export default async function SettingPage() {
 
   async function postData(formData: FormData) {
     "use server";
-    noStore();
     const name = formData.get("name") as string;
     const colorScheme = formData.get("color") as string;
 

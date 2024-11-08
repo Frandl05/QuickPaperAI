@@ -1,12 +1,10 @@
 import { headers } from "next/headers";
 import Stripe from "stripe";
 import prisma from "@/app/lib/db";
-import { unstable_noStore as noStore } from "next/cache";
 import { stripe } from "@/app/lib/stripe";
 
 // Webhook function
 export async function POST(req: Request) {
-  noStore();
   const body = await req.text();
   const signature = headers().get("Stripe-Signature") as string;
 
