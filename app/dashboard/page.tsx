@@ -4,7 +4,9 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { CreateNewAcademicPaper, GetStartedButton } from '../components/Submitbuttons';
+import {unstable_noStore as noStore } from "next/cache";
 async function getData(userId: string) {
+  noStore();
   const data = await prisma.user.findUnique ({
     where: {
       id: userId, // Asegúrate de que 'userId' esté definido y sea del tipo correcto

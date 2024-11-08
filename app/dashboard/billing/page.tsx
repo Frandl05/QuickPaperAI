@@ -42,6 +42,7 @@ async function getData(userId: string) {
     const data = await getData(user?.id as string);
 
     async function createSubscription() {
+      noStore();
         "use server";
       
         const dbUser = await prisma.user.findUnique({
@@ -66,6 +67,7 @@ async function getData(userId: string) {
       }
 
       async function createCustomerPortal() {
+        noStore();
         "use server";
         const session = await stripe.billingPortal.sessions.create({
           customer: data?.user.stripeCustomerId as string,
