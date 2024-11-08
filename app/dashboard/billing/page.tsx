@@ -94,7 +94,7 @@ async function getData(userId: string) {
                 <CardHeader>
                   <CardTitle>Edit Subscription</CardTitle>
                   <CardDescription>
-                    Click on the button below, this will give you the opportunity to change your payment details and view your statement at the same time.
+                    Click on the button below to change your payment details and view your statement at the same time.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
